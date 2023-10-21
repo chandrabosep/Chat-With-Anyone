@@ -1,4 +1,4 @@
-import { ChatList } from "@/components/ChatList";
+import ChatList from "@/components/ChatList";
 
 type Props = {
     Params:{};
@@ -6,7 +6,7 @@ type Props = {
         error: string;
     }
 }
-const page = ({searchParams: {error}}:Props) => {
+function ChatsPage({searchParams: {error}}:Props) {
   return (
     <>
     {/* chat permission chats */}
@@ -16,4 +16,4 @@ const page = ({searchParams: {error}}:Props) => {
   )
 }
 
-export default page
+export default ChatsPage

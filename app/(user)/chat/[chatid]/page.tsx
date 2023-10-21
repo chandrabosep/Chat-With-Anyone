@@ -1,10 +1,10 @@
 import React from 'react'
 
-const ChatPage = () => {
+function ChatPage() {
   return (
-    <div>
+    <>
       
-    </div>
+    </>
   )
 }
 
