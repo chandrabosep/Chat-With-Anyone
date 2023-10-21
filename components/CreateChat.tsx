@@ -1,13 +1,28 @@
 "use client"
-import React from 'react'
+import React, { use, useState } from 'react'
 import { Button } from './ui/button'
 import { MessageSquarePlusIcon } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import { useToast } from './ui/use-toast'
+import { useSession } from 'next-auth/react'
 
 function CreateChat() {
+  const {data: session} = useSession();
+  const [loading, setLoading] = useState(false)
+  const { toast } = useToast()
     const router = useRouter();
     const createNewChat = () => {
-        router.push('/chat/new')
+      if(!session?.user?.email) return;
+
+      setLoading(true);
+      toast({
+        title: "Create new chat...",
+        description:"Hold tight while we create your chat...",
+        duration: 3000
+      })
+
+
+        router.push('/chat/abc')
     }
   return (
     <Button onClick={createNewChat} variant={'ghost'}>

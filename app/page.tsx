@@ -4,9 +4,9 @@ import { cn } from '@/lib/utils'
 export default function Home() {
   return (
     <main>
-      <div className='relative isolate -z-50 dark:bg-gray-900'>
+      <div>
         <div
-            className="absolute inset-x-0 top-28 transform-gpu overflow-hidden blur-3xl"
+            className="absolute inset-x-0 top-40 transform-gpu overflow-hidden blur-3xl "
             aria-hidden="true"
           >
             <div
@@ -17,14 +17,15 @@ export default function Home() {
               }}
             />
           </div>
-            <div className='pt-32 md:pt-40 z-50 h-screen'>
+          <button className="inline-flex  items-center justify-center w-full rounded-none bg-gradient-to-r text-xl text-center text-white px-5 py-2 from-[#7775d6] to-[#fa37d0]">Hey!</button>
+            <div className='pt-32 md:pt-40 z-50 relative'>
             <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-              <div className='mx-auto max-w-3xl text-center z-50 '>
-                  <h1 className='text-4xl md:text-6xl font-bold tracking-tight text-black dark:text-white pb-2'>Chat with Anyone, anywhere!</h1>
-                  <p className='mt-6 text-lg md:text-md font-light leading-8 text-gray-600 dark:text-gray-300'>You speak your language, they speak their language.<span className='text-indigo-600 dark:text-indigo-500'> Let AI handle the translation.</span></p>
+              <div className='mx-auto max-w-4xl text-center'>
+                  <h1 className='text-4xl md:text-7xl font-bold tracking-tight text-black dark:text-white pb-2'>Chat with Anyone, anywhere!</h1>
+                  <p className='mt-6 text-sm md:text-xl font-light md:font-medium leading-6 text-gray-600 dark:text-gray-300'>You speak your language, they speak their language.<span className='text-indigo-600 dark:text-[#686bff]'> Let AI handle the translation.</span></p>
                   <div className='flex  flex-row gap-10 justify-center pt-10'>
-                    <Button variant='indigo' className='font-light text-sm '>Get Started</Button>
-                    <Button variant='ghost' className='font-light text-sm'>view Code</Button>
+                    <Button variant='indigo' size={'lg'} className='font-light text-sm md: '><a href="/chat">Get Started</a></Button>
+                    <Button variant='ghost' size={'lg'} className='font-light text-sm'>view Code</Button>
                   </div>
               </div>
             </div>

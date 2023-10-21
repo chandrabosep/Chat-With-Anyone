@@ -10,8 +10,8 @@ import CreateChat from "./CreateChat"
 async function Header () {
   const session: any = await getServerSession(authOptions);
   return (
-    <header className="sticky top-0 z-40 w-full dark:bg-gray-900 bg-white">
-        <nav className="flex flex-col md:flex-row items-center p-5 bg-white dark:bg-gray-900 max-w-7xl mx-auto">
+    <header className="sticky top-0 z-40 w-full dark:bg-[#0e0e11] bg-white">
+        <nav className="flex flex-col md:flex-row items-center p-5 bg-white dark:bg-[#0e0e11] max-w-7xl mx-auto">
             <Logo />
             <div className="flex-1 flex items-center justify-end space-x-4">
               {/* <LanguageSelect /> */}
