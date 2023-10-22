@@ -2,10 +2,10 @@ import { authOptions} from '@/auth';
 import {getServerSession}  from "next-auth"
 import ChatInput from '@/components/ChatInput';
 
- function ChatPage() {
+ function ChatPage({params: {chatId}}: Props) {
   return (
     <>
-      <ChatInput/>
+      <ChatInput chatId='1'/>
       
     </>
   )
