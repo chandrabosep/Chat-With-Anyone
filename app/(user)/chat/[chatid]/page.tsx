@@ -1,8 +1,11 @@
-import React from 'react'
+import { authOptions} from '@/auth';
+import {getServerSession}  from "next-auth"
+import ChatInput from '@/components/ChatInput';
 
-function ChatPage() {
+ function ChatPage() {
   return (
     <>
+      <ChatInput/>
       
     </>
   )
