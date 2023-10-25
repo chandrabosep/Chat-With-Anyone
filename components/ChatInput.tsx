@@ -5,14 +5,17 @@ import {useForm} from 'react-hook-form';
 import * as z from 'zod';
 import { Button } from './ui/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from './ui/form';
-import { Input } from './ui/input';
-
+import { Input } from '@/components/ui/input';
+// import { messagesRef } from '@/';
+import {addDoc, serverTimestamp} from 'firebase/firestore';
+import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
     input: z.string().max(1000),
 });
 
 function ChatInput({childId}: {childId: string}) {
+  const Router = useRouter();
     const {data: session} = useSession();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -20,16 +23,31 @@ function ChatInput({childId}: {childId: string}) {
             input: "",
         },
     });
-    async function onSubmit (formData: z.infer<typeof formSchema>){
+    async function onSubmit (values: z.infer<typeof formSchema>){
       if (values.input.length === 0){
         return;
       }
       if(!session?.user){
         return;
       }
+
+      // const userToStore:User = {
+      //   id: session.user.id!,
+      //   name: session.user.name!,
+      //   email: session.user.email!,
+      //   image: session.user.image || ""
+      // };
+  
+      // addDoc(messagesRef(chatId), {
+      //   input: values.input,
+      //   timestamp: serverTimestamp(),
+      //   user: userToStore
+      // })
+
+      form.reset();
     }
 
-    const userToStore
+   
 
 
   return (

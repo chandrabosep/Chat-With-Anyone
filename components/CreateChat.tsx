@@ -24,16 +24,16 @@ function CreateChat() {
       })
         const chatId = uuidv4();
 
-        await setDoc(addChatRef(chatId,session.user.id),{
-          userId:session.user.id!,
-          email: session.user.email!,
-          timestamp:serverTimestamp(),
-          isAdmin: true,
-          chatId:chatId,
-          image:session.user.image || "",
-        });
+        // await setDoc(addChatRef(chatId,session.user.id),{
+        //   userId:session.user.id!,
+        //   email: session.user.email!,
+        //   timestamp:serverTimestamp(),
+        //   isAdmin: true,
+        //   chatId:chatId,
+        //   image:session.user.image || "",
+        // });
 
-        router.push('/chat/abc')
+        // router.push('/chat/abc')
     } 
   return (
     <Button onClick={createNewChat} variant={'ghost'}>
